@@ -1223,7 +1223,10 @@ Blockly.Versioning.AllUpgradeMaps =
     /* From BlockSaveFile.java:
       handlePropertyRename(componentName, "Alignment", "TextAlignment");
     */
-    2: "ai1CantDoUpgrade" // Just indicates we couldn't do upgrade even if we wanted to
+    2: "ai1CantDoUpgrade", // Just indicates we couldn't do upgrade even if we wanted to
+
+    // RequestFocus was added
+    3: "noUpgrade"
 
   }, // End EmailPicker upgraders
 
@@ -1495,13 +1498,17 @@ Blockly.Versioning.AllUpgradeMaps =
     // AI2:
     // - Added BackgroundColor Property
     // - Added TextColor Property
-    3: "noUpgrade"
+    3: "noUpgrade",
+    // AI2:
+    // - Added TextSize Property
+    4: "noUpgrade"
 
   }, // End ListView upgraders
 
   "LocationSensor": {
 
-    // AI2: The TimeInterval and DistanceInterval properties were added.
+    // AI1: The TimeInterval and DistanceInterval properties were added.
+    // No changes required.
     2: "noUpgrade"
 
   }, // End LocationSensor upgraders
@@ -1538,7 +1545,11 @@ Blockly.Versioning.AllUpgradeMaps =
     2: "ai1CantDoUpgrade", // Just indicates we couldn't do upgrade even if we wanted to
 
     // AI2: Added NotifierColor, TextColor and NotifierLength options
-    3: "noUpgrade"
+    3: "noUpgrade",
+
+    // Added a ProgressDialog, a dialog that cannot be dismissed by the user.
+    // The ShowProgressDialog will show the dialog, and DismissProgressDialog is the only way to dismiss it
+    4: "noUpgrade"
 
   }, // End Notifier upgraders
 
@@ -1614,7 +1625,10 @@ Blockly.Versioning.AllUpgradeMaps =
     /* From BlockSaveFile.java:
       handlePropertyRename(componentName, "Alignment", "TextAlignment");
     */
-    2: "ai1CantDoUpgrade" // Just indicates we couldn't do upgrade even if we wanted to
+    2: "ai1CantDoUpgrade", // Just indicates we couldn't do upgrade even if we wanted to
+
+    // RequestFocus was added
+    3: "noUpgrade"
 
   }, // End PasswordTextBox upgraders
 
@@ -1775,7 +1789,10 @@ Blockly.Versioning.AllUpgradeMaps =
   "Slider": {
 
     //This is initial version. Placeholder for future upgrades
-    1: "noUpgrade"
+    1: "noUpgrade",
+
+    // Added the property to allow for the removal of the Thumb Slider
+    2: "noUpgrade"
 
   }, // End Slider upgraders
 
@@ -1800,7 +1817,10 @@ Blockly.Versioning.AllUpgradeMaps =
   "SoundRecorder": {
 
     //This is initial version. Placeholder for future upgrades
-    1: "noUpgrade"
+    1: "noUpgrade",
+    // AI2: The Sound.SavedRecording property was added.
+    // No blocks need to be modified to upgrade to version 2.
+    2: "noUpgrade"
 
   }, // End SoundRecorder upgraders
 
@@ -1843,7 +1863,10 @@ Blockly.Versioning.AllUpgradeMaps =
     // No blocks need to be modified to upgrade to version 4, although old
     // block need to have MultiLine explicitly set to true, since the new default
     // is false (see YoungAndroidFormUpgrade).
-    4: "noUpgrade"
+    4: "noUpgrade",
+
+    // AI2: Added RequestFocus method
+    5: "noUpgrade"
 
   }, // End TextBox upgraders
 
@@ -1865,7 +1888,11 @@ Blockly.Versioning.AllUpgradeMaps =
   "TextToSpeech": {
 
     // AI2:  added speech pitch and rate
-    2: "noUpgrade"
+    2: "noUpgrade",
+
+    // the AvailableLanguages property was added
+    // the AvailableCountries property was added
+    3: "noUpgrade"
 
   }, // End TextToSpeech upgraders
 
@@ -2033,7 +2060,10 @@ Blockly.Versioning.AllUpgradeMaps =
     4: "noUpgrade",
 
     // AI2: IgnoreSslError property added
-    5: "noUpgrade"
+    5: "noUpgrade",
+
+    // AI2: Added ClearCaches method
+    6: "noUpgrade"
 
   }, // End WebViewer upgraders
 
