@@ -126,11 +126,6 @@ public class Ode implements EntryPoint {
   // I18n messages
   public static final OdeMessages MESSAGES = GWT.create(OdeMessages.class);
 
-  /**
-   * The base URL for App Inventor documentation.
-   */
-  public static final String APP_INVENTOR_DOCS_URL = "";
-
   // Global instance of the Ode object
   private static Ode instance;
 
@@ -142,6 +137,9 @@ public class Ode implements EntryPoint {
 
   // Command registry
   private static final CommandRegistry COMMANDS = new CommandRegistry();
+
+  // System config
+  private static Config config;
 
   // User settings
   private static UserSettings userSettings;
@@ -288,6 +286,15 @@ public class Ode implements EntryPoint {
   }
 
   /**
+   * Returns the system config.
+   *
+   * @return  system config
+   */
+  public static Config getSystemConfig() {
+    return config;
+  }
+
+  /**
    * Returns the user settings.
    *
    * @return  user settings
@@ -321,7 +328,7 @@ public class Ode implements EntryPoint {
         if(gallerySettings.galleryEnabled() == true){
           ProjectListBox.getProjectListBox().getProjectList().setPublishedHeaderVisible(true);
           projectToolbar.setPublishOrUpdateButtonVisible(true);
-          GalleryClient.getInstance().setSystemEnvironmet(settings.getEnvironment());
+          GalleryClient.getInstance().setSystemEnvironment(settings.getEnvironment());
           GalleryListBox.loadGalleryList();
           topPanel.showGalleryLink(true);
           if(user.isModerator()){
@@ -632,6 +639,7 @@ public class Ode implements EntryPoint {
 
       @Override
       public void onSuccess(Config result) {
+        config = result;
         user = result.getUser();
         // If user hasn't accepted terms of service, ask them to.
         if (!user.getUserTosAccepted()) {
