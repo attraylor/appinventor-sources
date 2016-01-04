@@ -37,6 +37,7 @@ import com.google.appinventor.client.editor.simple.components.MockVerticalArrang
 import com.google.appinventor.client.editor.simple.components.MockVideoPlayer;
 import com.google.appinventor.client.editor.simple.components.MockWebViewer;
 import com.google.appinventor.client.editor.simple.components.MockSpinner;
+import com.google.appinventor.client.editor.simple.components.MockGraph;
 import com.google.common.collect.Maps;
 import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.user.client.ui.Image;
@@ -310,9 +311,11 @@ public final class SimpleComponentDescriptor {
       return new MockWebViewer(editor);
     } else if (name.equals(MockSpinner.TYPE)) {
       return new MockSpinner(editor);
+    } else if (name.equals(MockGraph.TYPE)) {
+      return new MockGraph(editor);
     } else {
+    }
       // TODO(user): add 3rd party mock component proxy here
       throw new UnsupportedOperationException("unknown component: " + name);
     }
   }
-}
